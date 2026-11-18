@@ -89,18 +89,19 @@ export default async function FcaDocumentsPage({ searchParams }) {
           <div className="table-wrap">
             <table>
               <thead>
-                <tr><th>FCA</th><th>Region</th><th>Province</th><th>Fund source</th><th>Documents complete</th><th>Remarks</th></tr>
+                <tr><th>FCA</th><th>Region</th><th>Province</th><th>Fund source</th><th>Documents complete</th><th>Remarks</th><th>Actions</th></tr>
               </thead>
               <tbody>
                 {rows.map((record) => {
                   const complete = DOCUMENTS.filter(([key]) => Number(record[key]) > 0).length;
                   return (
                     <tr key={record.id}>
-                      <td><strong>{record.fca_name}</strong>{record.remarks ? <small>{record.remarks}</small> : null}</td>
+                      <td><strong>{record.fca_name}</strong></td>
                       <td>{record.region}</td>
                       <td>{record.province}</td>
                       <td>{record.fund_source || '—'}</td>
                       <td>{complete} / {DOCUMENTS.length}</td>
+                      <td>{record.remarks || '-'}</td>
                       <td>
                         <details>
                           <summary>Edit</summary>
@@ -119,7 +120,7 @@ export default async function FcaDocumentsPage({ searchParams }) {
                     </tr>
                   );
                 })}
-                {!rows.length ? <tr><td className="empty" colSpan="6">No FCA document records found.</td></tr> : null}
+                {!rows.length ? <tr><td className="empty" colSpan="7">No FCA document records found.</td></tr> : null}
               </tbody>
             </table>
           </div>
