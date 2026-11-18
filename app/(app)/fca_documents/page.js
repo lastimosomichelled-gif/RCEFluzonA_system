@@ -3,6 +3,7 @@ import { requireUser } from '@/lib/auth';
 import { deleteFcaDocument, saveFcaDocument } from '../../actions';
 import PageHeader from '@/components/PageHeader';
 import Notice from '@/components/Notice';
+import FcaLocationFields from '@components/FcaLocationFields';
 
 export const metadata = { title: 'FCA Documents' };
 
@@ -22,21 +23,10 @@ function DocumentFields({ record }) {
     <>
       {record?.id ? <input type="hidden" name="id" value={record.id} /> : null}
       <div className="field">
-        <label>FCA name</label>
+        <label>FCA/LGU Name</label>
         <input name="fca_name" required maxLength={180} defaultValue={record?.fca_name ?? ''} />
       </div>
-      <div className="field">
-        <label>Region</label>
-        <input name="region" required maxLength={100} defaultValue={record?.region ?? ''} />
-      </div>
-      <div className="field">
-        <label>Province</label>
-        <input name="province" required maxLength={100} defaultValue={record?.province ?? ''} />
-      </div>
-      <div className="field">
-        <label>Fund source</label>
-        <input name="fund_source" maxLength={50} defaultValue={record?.fund_source ?? ''} />
-      </div>
+      <FcaLocationFields record={record} />
       <div className="field wide">
         <label>Remarks</label>
         <textarea name="remarks" rows="2" defaultValue={record?.remarks ?? ''} />
