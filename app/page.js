@@ -32,7 +32,7 @@ export default async function LoginPage({ searchParams }) {
             <button className="btn primary full">Log in <span aria-hidden="true">→</span></button>
           </form>
           <p className="auth-links">
-            New to RCEF Monitor? <Link href="/register">Create an account</Link>
+          <Link href="/register">Create an account</Link>
           </p>
         </section>
       </main>
