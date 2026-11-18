@@ -15,7 +15,7 @@ function MachineryFields({ record, id }) {
     <>
       {id ? <input type="hidden" name="id" value={id} /> : null}
       <div className="field">
-        <label>FCA name</label>
+        <label>FCA/LGU Name</label>
         <input name="fca" defaultValue={record?.fca ?? ''} maxLength={180} />
       </div>
       <div className="field">
