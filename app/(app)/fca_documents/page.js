@@ -3,7 +3,7 @@ import { requireUser } from '@/lib/auth';
 import { deleteFcaDocument, saveFcaDocument } from '../../actions';
 import PageHeader from '@/components/PageHeader';
 import Notice from '@/components/Notice';
-import FcaLocationFields from '@components/FcaLocationFields';
+import FcaLocationFields from '@/components/FcaLocationFields';
 
 export const metadata = { title: 'FCA Documents' };
 
