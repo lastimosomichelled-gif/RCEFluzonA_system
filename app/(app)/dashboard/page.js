@@ -117,6 +117,7 @@ export default async function DashboardPage({ searchParams }) {
             </select>
             <button className="btn secondary">Apply filter</button>
             <Link className="btn secondary" href="/dashboard">Clear</Link>
+            <a className="btn primary" href={`/export/pdf${year ? `?fund_year=${year}` : ''}`}>Export PDF</a>
           </form>
         </section>
 
