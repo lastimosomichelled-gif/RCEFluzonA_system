@@ -26,7 +26,6 @@ export default async function LoginPage({ searchParams }) {
             <input id="username" name="username" required autoComplete="username" placeholder="Your username" />
             <div className="password-label">
               <label htmlFor="password">Password</label>
-              <Link href="/forgot_password">Forgot password?</Link>
             </div>
             <input id="password" type="password" name="password" required autoComplete="current-password" placeholder="Enter your password" />
             <button className="btn primary full">Log in <span aria-hidden="true">→</span></button>
