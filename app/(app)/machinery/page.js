@@ -118,7 +118,7 @@ export default async function MachineryPage({ searchParams }) {
               <thead>
                 <tr>
                   <th>FCA / equipment</th><th>Location</th><th>Year</th>
-                  <th>Qty</th><th>Status</th><th>Last updated</th><th>Actions</th>
+                  <th>Qty</th><th>Status</th><th>Last updated</th><th>Remarks</th><th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -130,6 +130,7 @@ export default async function MachineryPage({ searchParams }) {
                     <td>{record.quantity}</td>
                     <td><span className="status">{record.status}</span></td>
                     <td>{dateValue(record.last_update)}</td>
+                    <td>{record.remarks || '-'}</td>
                     <td>
                       <details>
                         <summary>Edit</summary>
@@ -151,7 +152,7 @@ export default async function MachineryPage({ searchParams }) {
                     </td>
                   </tr>
                 ))}
-                {!rows.length ? <tr><td className="empty" colSpan="7">No machinery records match these filters.</td></tr> : null}
+                {!rows.length ? <tr><td className="empty" colSpan="8">No machinery records match these filters.</td></tr> : null}
               </tbody>
             </table>
           </div>
