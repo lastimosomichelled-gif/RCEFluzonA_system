@@ -10,11 +10,15 @@ export const metadata = { title: 'Log in' };
 export default async function LoginPage({ searchParams }) {
   if (await me()) redirect('/dashboard');
   return (
+    <>
+      <BodyClass name="auth" />
+      <main
+        className="auth-shell login-shell"
+        style={{ gridTemplateColumns: '1fr', width: 'min(440px, 100%)', minHeight: 0 }}
+      >
         <section className="auth-card login-card">
           <div className="login-heading">
-            <span className="login-kicker">WELCOME BACK</span>
             <h2>Sign in to your account</h2>
-            <p>Enter your username and password to continue.</p>
           </div>
           <Notice ok={searchParams?.message} error={searchParams?.error} />
           <form action={login}>
@@ -30,7 +34,6 @@ export default async function LoginPage({ searchParams }) {
           <p className="auth-links">
             New to RCEF Monitor? <Link href="/register">Create an account</Link>
           </p>
-          <p className="login-note">Access is for Luzon A.</p>
         </section>
       </main>
     </>
