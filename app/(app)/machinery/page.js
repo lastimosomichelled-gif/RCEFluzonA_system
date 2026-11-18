@@ -41,7 +41,7 @@ function MachineryFields({ record, id }) {
         </select>
       </div>
       <div className="field">
-        <label>Last update</label>
+        <label>Date of Monitoring</label>
         <input type="date" name="last_update" required defaultValue={dateValue(record?.last_update) || today()} />
       </div>
       <div className="field wide">
@@ -118,7 +118,7 @@ export default async function MachineryPage({ searchParams }) {
               <thead>
                 <tr>
                   <th>FCA / equipment</th><th>Location</th><th>Year</th>
-                  <th>Qty</th><th>Status</th><th>Last updated</th><th>Remarks</th><th>Actions</th>
+                  <th>Qty</th><th>Status</th><th>Date of Monitoring</th><th>Remarks</th><th>Actions</th>
                 </tr>
               </thead>
               <tbody>
