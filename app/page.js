@@ -18,7 +18,7 @@ export default async function LoginPage({ searchParams }) {
       >
         <section className="auth-card login-card">
           <div className="login-heading">
-            <h2>Sign in to your account</h2>
+            <h2>LUZON A | MONITORING</h2>
           </div>
           <Notice ok={searchParams?.message} error={searchParams?.error} />
           <form action={login}>
